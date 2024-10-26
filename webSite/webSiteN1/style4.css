@@ -1,0 +1,89 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #121212; /* მთლიანად ფონდი შავი */
+    color: #ffffff; /* ტექსტის ფერი თეთრი */
+    margin: 0;
+    padding: 0;
+}
+
+.navbar {
+    background-color: #ffffff; /* navbar ფონდი თეთრი */
+    padding: 20px;
+}
+
+.navbar ul {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    justify-content: space-between; /* ერთმანეთზე გაწვდილი */
+}
+
+.navbar ul li {
+    margin: 0 10px; /* დაშორება */
+}
+
+.navbar ul li a {
+    color: #000000; /* ტექსტის ფერი შავი */
+    background-color: #ffffff; /* თეთრი ფონდი მხოლოდ აქ */
+    text-decoration: none;
+    padding: 10px;
+    border-radius: 4px;
+    transition: background 0.3s, color 0.3s;
+}
+
+.navbar ul li a:hover {
+    background-color: #575757; /* ფონდი hover-ის დროს */
+    color: #ffffff; /* ტექსტი სვიტერის დროს თეთრი */
+}
+
+.container {
+    max-width: 600px;
+    margin: 50px auto;
+    background: #222222; /* ფორმის ფონდი მუქი ნაცრისფერი */
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+}
+
+h1 {
+    text-align: center;
+    color: #ffffff; /* ტექსტი თეთრი */
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+label {
+    margin: 10px 0 5px;
+    color: #ffffff; /* ტექსტი თეთრი */
+}
+
+input, textarea {
+    padding: 10px;
+    border: 1px solid #444;
+    border-radius: 5px;
+    background-color: #333; /* input ფონდი მუქი ნაცრისფერი */
+    color: #ffffff; /* ტექსტი თეთრი */
+}
+
+input:focus, textarea:focus {
+    border-color: #007BFF;
+    outline: none;
+}
+
+button {
+    margin-top: 15px;
+    padding: 10px;
+    background-color: #007BFF;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
