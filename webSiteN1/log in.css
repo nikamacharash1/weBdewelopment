@@ -1,0 +1,217 @@
+/* Global reset for all elements */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+}
+
+/* Body styling */
+body {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    padding: 0 10px;
+    color: white;
+    position: relative;
+}
+
+/* Background image styling */
+body::before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: url("/webSiteN1/bh.jpg") center center no-repeat; /* replace with your image URL */
+    background-position: center;
+    background-size: cover;
+    z-index: -1;
+}
+
+/* Wrapper for form */
+.wrapper {
+    width: 490px;
+    border-radius: 8px;
+    padding: 30px;
+    text-align: center;
+    border: 1px solid rgba(255, 255, 255, 0.5); /* More transparent */
+    backdrop-filter: blur(8px);
+}
+
+/* Form layout */
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+/* Title styling */
+h2 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    color: #fff;
+}
+
+/* Input fields layout */
+.input-field {
+    position: relative;
+    border-bottom: 2px solid #ccc;
+    margin: 15px 0;
+}
+
+/* Label styling */
+.input-field label {
+    position: absolute;
+    color: rgb(255, 0, 0);
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%);
+    font-size: 16px;
+    pointer-events: none;
+    transition: 0.15s ease;
+}
+
+/* Input field styling */
+.input-field input {
+    width: 100%;
+    height: 40px;
+    color: #fff;
+    background: transparent;
+    border: none;
+    outline: none;
+    font-size: 16px;
+}
+
+/* Label move effect on focus */
+.input-field input:focus~label,
+.input-field input:valid~label {
+    font-size: 0.8rem;
+    top: 10px;
+    transform: translateY(-120%);
+}
+
+/* Show/Hide password button */
+.toggle-password {
+    position: absolute;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    background: none;
+    border: none;
+    color: red; /* Change button text color to red */
+    font-size: 14px;
+    cursor: pointer;
+    transition: 0.3s ease;
+}
+
+.toggle-password:hover {
+    color: white; /* Button color change on hover */
+}
+
+/* Forgot password and remember me section */
+.forget {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 25px 0 35px 0;
+    color: #ff0000;
+}
+
+/* Checkboxes and label adjustments */
+#remember {
+    accent-color: #fff;
+}
+
+.forget label {
+    display: flex;
+    align-items: center;
+}
+
+/* Link styling for forget password */
+.wrapper a {
+    color: #0e003f;
+    text-decoration: underline;
+}
+
+/* Button styling */
+button {
+    background: #fff;
+    color: #000;
+    font-weight: 600;
+    border: none;
+    padding: 12px 20px;
+    cursor: pointer;
+    border-radius: 3px;
+    font-size: 16px;
+    border: 2px solid transparent;
+    transition: 0.3s ease;
+}
+
+/* Button hover effect */
+button:hover {
+    border-color: #fff;
+}
+
+/* Register section */
+.register {
+    text-align: center;
+    margin-top: 30px;
+    color: #0d0046;
+}
+
+/* Loader (small box moving across the screen) */
+.loader {
+    display: none;
+    position: absolute;
+    top: 50%;
+    left: 10%;
+    width: 30px;
+    height: 30px;
+    background-color: #f0a500;
+    border-radius: 50%;
+    transform: translateY(-50%);
+    animation: moveLoader 3s linear forwards;
+}
+
+/* Keyframes for loader movement */
+@keyframes moveLoader {
+    0% {
+        left: 10%;
+    }
+    50% {
+        left: 50%;
+    }
+    100% {
+        left: 90%;
+    }
+}
+
+/* Loader animation (circle) */
+.loader {
+    width: 40px;
+    height: 40px;
+    border: 5px solid #ccc;
+    border-top: 5px solid #fff;
+    border-radius: 50%;
+    position: absolute;
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%);
+    animation: moveLoader 3s linear forwards; /* Move animation */
+    display: none; /* Initially hidden */
+}
+
+/* Spin animation for loader */
+@keyframes moveLoader {
+    0% { transform: translateX(0) translateY(-50%); }
+    100% { transform: translateX(200px) translateY(-50%); } /* Move 200px to the right */
+}
+
+/* Logged In text style */
+.logged-in-text {
+    display: none;
+    font-size: 1.5rem;
+    text-align: center;
+    margin-top: 20px;
+}

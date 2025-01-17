@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>sign In</title>
+    <link rel="stylesheet" href="sign in.css">
+</head>
+<body>
+    <div class="wrapper">
+        <form action="#" id="loginForm">
+            <h2>welcome</h2>
+            <div class="input-field">
+                <input type="email" id="email" required>
+                <label for="email">Enter your email</label>
+            </div>
+            <div class="input-field">
+                <input type="password" id="password" required>
+                <label for="password">Enter your password</label>
+                <button type="button" id="togglePassword" class="toggle-password">Show</button>
+            </div>
+            <div class="forget">
+                <label for="remember">
+                    <input type="checkbox" id="remember">
+                    <p>Remember me</p>
+                </label>
+                <a href="#">Forget password?</a>
+            </div>
+            <button type="submit" id="loginBtn">sign In</button> 
+            <div class="register">
+                <p>
+                    Don't have an account?
+                    <a href="#">Register</a>
+                </p>
+            </div>
+        </form>
+
+        <div id="loader" class="loader"></div>
+        <div id="loggedInText" class="logged-in-text">signed in</div>
+    </div>
+
+    <script src="signup.js"></script>
+    <script>
+        const togglePassword = document.getElementById("togglePassword");
+        const passwordField = document.getElementById("password");
+
+        togglePassword.addEventListener("click", function () {
+            const type = passwordField.type === "password" ? "text" : "password";
+            passwordField.type = type;
+            togglePassword.textContent = type === "password" ? "Show" : "Hide";
+        });
+
+        const loginButton = document.getElementById('loginBtn');
+        const loader = document.getElementById('loader');
+        const loggedInText = document.getElementById('loggedInText');
+        const loginForm = document.getElementById('loginForm');
+        const emailField = document.getElementById('email');
+        
+        loginForm.addEventListener('submit', function (event) {
+            event.preventDefault(); 
+
+            if (emailField.value === "" || passwordField.value === "") {
+                alert("Please fill in both the email and password fields.");
+                return; 
+            }
+
+            loader.style.display = 'block';
+
+            setTimeout(function () {
+                loader.style.display = 'none';
+                loggedInText.style.display = 'block';
+                loggedInText.style.color = 'green'; 
+            }, 3000); 
+        });
+    </script>
+</body>
+</html>

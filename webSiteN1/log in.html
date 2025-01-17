@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register</title>
+    <link rel="stylesheet" href="log in.css">
+</head>
+<body>
+    <div class="wrapper">
+        <form action="#" id="registerForm">
+            <h2>Sign Up</h2>
+            <!-- Name Input Field -->
+            <div class="input-field">
+                <input type="text" id="name" required>
+                <label for="name">Enter your full name</label>
+            </div>
+            <!-- Email Input Field -->
+            <div class="input-field">
+                <input type="email" id="email" required>
+                <label for="email">Enter your email</label>
+            </div>
+            <!-- Password Input Field -->
+            <div class="input-field">
+                <input type="password" id="password" required>
+                <label for="password">Enter your password</label>
+                <button type="button" id="togglePassword" class="toggle-password">Show</button>
+            </div>
+            <!-- Confirm Password Input Field -->
+            <div class="input-field">
+                <input type="password" id="confirmPassword" required>
+                <label for="confirmPassword">Confirm your password</label>
+            </div>
+            <div class="forget">
+                <label for="remember">
+                    <input type="checkbox" id="remember">
+                    <p>Remember me</p>
+                </label>
+            </div>
+            <button type="submit" id="registerBtn">Sign Up</button> <!-- Register Button -->
+            <div class="register">
+                <p>
+                    Already have an account?
+                    <a href="log in.html">Login</a>
+                </p>
+            </div>
+        </form>
+
+        <!-- Loader and Logged In Text -->
+        <div id="loader" class="loader"></div>
+        <div id="loggedInText" class="logged-in-text">Registered successfully</div>
+    </div>
+
+    <script src="signup.js"></script>
+    <script>
+        // JavaScript to toggle password visibility
+        const togglePassword = document.getElementById("togglePassword");
+        const passwordField = document.getElementById("password");
+        const confirmPasswordField = document.getElementById("confirmPassword");
+
+        togglePassword.addEventListener("click", function () {
+            const type = passwordField.type === "password" ? "text" : "password";
+            passwordField.type = type;
+            confirmPasswordField.type = type;
+            togglePassword.textContent = type === "password" ? "Show" : "Hide";
+        });
+
+        // JavaScript for Registration animation
+        const registerButton = document.getElementById('registerBtn');
+        const loader = document.getElementById('loader');
+        const loggedInText = document.getElementById('loggedInText');
+        const registerForm = document.getElementById('registerForm');
+
+        // When the user clicks the register button
+        registerForm.addEventListener('submit', function (event) {
+            event.preventDefault(); // Prevent form submission
+
+            // Check if both fields are filled
+            if (passwordField.value !== confirmPasswordField.value) {
+                alert("love you.");
+                return;
+            }
+
+            // Show the loader (the moving circle)
+            loader.style.display = 'block';
+
+            // After 3 seconds (simulating registration process), show the "Registered" text in green color
+            setTimeout(function () {
+                // Hide the loader and show "Registered" text
+                loader.style.display = 'none';
+                loggedInText.style.display = 'block';
+                loggedInText.style.color = 'green'; // Change color to green
+            }, 3000); // After 3 seconds, the "Registered" text will appear and loader will disappear
+        });
+    </script>
+</body>
+</html>
