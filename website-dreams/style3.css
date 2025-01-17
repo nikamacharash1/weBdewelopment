@@ -1,0 +1,100 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    color: #333;
+    line-height: 1.6;
+    margin: 0;
+}
+
+header {
+    background: #00084e;
+    color: white;
+    padding: 20px 0;
+    text-align: center;
+}
+
+.container {
+    display: flex;
+}
+
+.sidebar {
+    background: black;
+    color: white;
+    padding: 20px;
+    width: 200px; 
+}
+
+.sidebar ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.sidebar ul li {
+    margin: 15px 0;
+}
+
+.sidebar ul li a {
+    color: white;
+    text-decoration: none;
+}
+
+.sidebar ul li a:hover {
+    text-decoration: underline;
+}
+
+main {
+    flex: 1; 
+    padding: 20px;
+}
+
+.quote-section {
+    display: flex; 
+    align-items: center;
+    margin: 50px;
+    padding: 15px;
+    background: white;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.images {
+    display: flex; /* სურათების მორგება */
+    margin-left: 20px; /* ადგილმატება */
+}
+
+.motivational-image {
+    max-width: 150px; 
+    height: auto;
+    margin-right: 10px; 
+}
+
+.side-image {
+    max-width: 1500px; 
+    height: 1500;
+    height: auto;
+}
+
+blockquote {
+    font-style: italic;
+    background-color: #e1f33a; 
+    padding: 20px;
+    border-left: 7px solid #00074b; 
+    border-radius: 5px;
+}
+
+
+
+img {
+    max-width: 100%;
+    height: auto;
+    margin-top: 10px;
+}
+
+footer {
+    text-align: center;
+    padding: 10px 0;
+    background: #5a67d8;
+    color: white;
+}
+
+
